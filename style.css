@@ -14,9 +14,9 @@
 nav {
     background-color: #000;
     width: 100%;
-    height: 50px;
+    min-height: 50px;
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: space-between;
     padding-inline: 2rem;
 }
@@ -24,23 +24,28 @@ nav {
 nav h1 {
     letter-spacing: 1px;
     color: var(--font-color);
+    align-self: center;
 }
 
 ul.menu {
     display: flex;
+    align-items: center;
     margin-right: 4rem;
-    gap: 2rem;
-    min-height: 100%;
 }
 
 li.menu-item {
     min-height: 100%;
     display: flex;
-    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    padding-inline: 2rem;
+}
+
+li.menu-item:hover {
+    background-color: rgb(90, 90, 90);
 }
 
 li.menu-item a {
-    min-height: 100%;
     color: var(--font-color);
     display: flex;
     align-items: center;
@@ -52,23 +57,31 @@ li.menu-item a:hover {
     text-decoration: underline;
 }
 
-li.menu-item:hover > .sub-menu {
+.sub-menu-container {
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 180px;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    min-width: 100vw;
+    padding-block: 1.5rem;
+    background-color: #000;
+}
+
+li.menu-item:hover > .sub-menu-container {
     display: flex;
 }
 
 ul.sub-menu {
-    position: absolute;
-    background-color: #000;
-    top: 100%;
-    display: none;
+    display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 1rem;
-    min-width: 150px;
-    padding: 1rem;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
 }
 
 ul.sub-menu > li {
     color: var(--font-color);
+    list-style: disc;
 }
