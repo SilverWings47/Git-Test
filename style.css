@@ -9,6 +9,7 @@
 
 :root {
     --font-color : #fff;
+    --link-animation-delay : 300ms;
 }
 
 nav {
@@ -19,15 +20,22 @@ nav {
     align-items: stretch;
     justify-content: space-between;
     padding-inline: 2rem;
+    transform: translate(-100%);
+    animation: animated-navbar 500ms ease-in forwards;
+}
+
+.animated {
+    animation: link-animation 300ms ease-in var(--link-animation-delay) forwards;
 }
 
 nav h1 {
     letter-spacing: 1px;
     color: var(--font-color);
     align-self: center;
+    transform: scale(0);
 }
 
-ul.menu {
+.menu {
     display: flex;
     align-items: center;
     margin-right: 4rem;
@@ -45,12 +53,13 @@ li.menu-item:hover {
     background-color: rgb(90, 90, 90);
 }
 
-li.menu-item a {
+.menu-item > a {
     color: var(--font-color);
     display: flex;
     align-items: center;
     text-transform: uppercase;
     letter-spacing: 1px;
+    transform: scale(0);
 }
 
 li.menu-item a:hover {
@@ -81,7 +90,38 @@ ul.sub-menu {
     gap: 1rem;
 }
 
+ul.sub-menu a {
+    color: var(--font-color);
+    align-items: center;
+    text-transform: uppercase;
+}
+
 ul.sub-menu > li {
     color: var(--font-color);
     list-style: disc;
+}
+
+@keyframes animated-navbar {
+    0% {
+        transform: translateY(-100%);
+    }
+    
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes link-animation {
+    0% {
+        transform: scale(0);
+    }
+
+    90% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
