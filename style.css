@@ -5,4 +5,95 @@
     font-family: sans-serif;
     list-style: none;
     text-decoration: none;
+    text-transform: uppercase;
+}
+
+.white-font {
+    color: white;
+}
+
+:root {
+    --background-color : #000;
+}
+
+nav {
+    background-color: var(--background-color);
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 2rem;
+    position: relative;
+}
+
+.menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background-color: var(--background-color);
+    min-width: 100vw;
+    min-height: 250px;
+}
+
+.menu-active {
+    display: flex;
+}
+
+.sub-menu {
+    display: none;
+    flex-direction: column;
+}
+
+.sub-menu-active {
+    display: flex;
+}
+
+.sub-menu-item {
+    position: relative;
+}
+
+.sub-menu-item > a {
+    display: inline-block;
+    padding-block: 22.25px;
+}
+
+.plus-sign {
+    position: absolute;
+    right: 20px;
+}
+
+.logo {
+    letter-spacing: 1px;
+}
+
+.menu-item > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-block: 22.25px;
+}
+
+.menu-item {
+    text-align: center;
+}
+
+/* .menu-item:hover {
+    background-color: rgb(99, 99, 99);
+} */
+
+.menu-btn {
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+@keyframes accordeon {
+    from {
+        height: 0px;
+    }
+
+    to {
+        height: 100px;
+    }
 }
