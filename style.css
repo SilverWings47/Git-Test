@@ -6,6 +6,7 @@
     list-style: none;
     text-decoration: none;
     text-transform: uppercase;
+    user-select: none;
 }
 
 .white-font {
@@ -90,17 +91,6 @@ nav {
     background-color: rgb(99, 99, 99);
 } */
 
-.menu-btn {
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
-@keyframes accordeon {
-    from {
-        height: 0px;
-    }
-
-    to {
-        height: 100px;
-    }
+.menu-btn .fa-solid {
+    font-size: 1.5rem;
 }
