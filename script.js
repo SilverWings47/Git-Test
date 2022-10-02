@@ -9,10 +9,12 @@ const menu = document.querySelector('.menu');
 
 productBtn.addEventListener('click', () => {
   productSubMenu.classList.toggle('sub-menu-active');
+  cartSubMenu.classList.remove('sub-menu-active');
 });
 
 cartBtn.addEventListener('click', () => {
   cartSubMenu.classList.toggle('sub-menu-active');
+  productSubMenu.classList.remove('sub-menu-active');
 });
 
 menuBtn.addEventListener('click', () => {

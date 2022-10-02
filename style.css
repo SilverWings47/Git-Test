@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
 *, *::after, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
     list-style: none;
     text-decoration: none;
     text-transform: uppercase;
@@ -14,11 +16,13 @@
 }
 
 :root {
-    --background-color : #000;
+    --primary-background-color : hsl(0, 0%, 15%);
+    --secondary-background-color : hsl(0, 0%, 5%);
+    --hover-background-color : hsl(0, 0%, 5%);
 }
 
 nav {
-    background-color: var(--background-color);
+    background-color: var(--primary-background-color);
     min-height: 50px;
     display: flex;
     align-items: center;
@@ -33,7 +37,7 @@ nav {
     position: absolute;
     top: 50px;
     left: 0;
-    background-color: var(--background-color);
+    background-color: var(--primary-background-color);
     min-width: 100vw;
     min-height: 250px;
 }
@@ -45,6 +49,7 @@ nav {
 .sub-menu {
     display: none;
     flex-direction: column;
+    
 }
 
 .sub-menu-active {
@@ -58,18 +63,6 @@ nav {
 .sub-menu-item > a {
     display: inline-block;
     padding-block: 22.25px;
-}
-
-.plus-sign {
-    position: absolute;
-    right: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid rgb(75, 75, 75);
-    width: 23px;
-    height: 23px;
-    border-radius: 50%;
 }
 
 .logo {
@@ -87,10 +80,60 @@ nav {
     text-align: center;
 }
 
-/* .menu-item:hover {
-    background-color: rgb(99, 99, 99);
-} */
+.menu-item:hover {
+    background-color: var(--hover-background-color);
+}
 
 .menu-btn .fa-solid {
     font-size: 1.5rem;
+}
+
+.fa-caret-down {
+    font-size: 75%;
+    margin-left: 10px;
+    position: absolute;
+    right: 40px;
+}
+
+@media screen and (min-width: 968px) {
+
+    .menu-btn {
+        display: none;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        min-width: 450px;
+        min-height: auto;  
+        margin-right: 2rem;
+    }
+
+    .menu-item > a {
+        padding: 1rem;
+    }
+
+    .fa-caret-down {
+        position: static;
+    }
+
+    .sub-menu {
+        position: absolute;
+        top: 100%;
+        left: 0px;
+        min-width: 100vw;
+        background-color: var(--background-color);
+    }
+
+    .sub-menu-active {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: start;
+        background-color: var(--secondary-background-color);
+    }
+
+    .sub-menu-item > a:hover {
+        text-decoration: underline;
+    }
 }
