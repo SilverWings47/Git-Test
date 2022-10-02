@@ -24,6 +24,7 @@
 nav {
     background-color: var(--primary-background-color);
     min-height: 50px;
+    max-width: 100vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -49,7 +50,7 @@ nav {
 .sub-menu {
     display: none;
     flex-direction: column;
-    
+    z-index: 9999;
 }
 
 .sub-menu-active {
@@ -95,6 +96,76 @@ nav {
     right: 40px;
 }
 
+.modal-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .75);
+    z-index: 1111;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-container.active {
+    display: flex;
+}
+
+.modal-box {
+    width: 400px;
+    max-width: 80%;
+    height: 250px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.modal-box__header {
+    background: var(--primary-background-color);
+    color: #fff;
+    letter-spacing: 1px;
+    padding: 1rem;
+}
+
+.modal-box__body {
+    flex: 1;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.close-btn {
+    color: #fff;
+    position: absolute;
+    right: 20px;
+    top: 5px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.show-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: .75rem;
+    border: none;
+    background-color: var(--primary-background-color);
+    color: #fff;
+    letter-spacing: 1px;
+    cursor: pointer;
+    z-index: -1;
+}
+
+.show-btn:hover {
+    background-color: var(--hover-background-color);
+}
+
 @media screen and (min-width: 968px) {
 
     .menu-btn {
@@ -136,4 +207,9 @@ nav {
     .sub-menu-item > a:hover {
         text-decoration: underline;
     }
+
+    .modal-box__body {
+        font-size: 1.2rem;
+    }
+
 }

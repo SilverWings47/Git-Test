@@ -1,4 +1,7 @@
 const productBtn = document.querySelector('.product-btn');
+const modalContainer = document.querySelector('.modal-container');
+const closeBtn = document.querySelector('.close-btn');
+const showBtn = document.querySelector('.show-btn');
 const productSubMenu = document.querySelectorAll('.sub-menu')[0];
 
 const cartBtn = document.querySelector('.cart-btn');
@@ -19,4 +22,11 @@ cartBtn.addEventListener('click', () => {
 
 menuBtn.addEventListener('click', () => {
   menu.classList.toggle('menu-active');
+});
+
+closeBtn.addEventListener('click', () => {
+  modalContainer.classList.remove('active');
+});
+showBtn.addEventListener('click', () => {
+  modalContainer.classList.add('active');
 });
